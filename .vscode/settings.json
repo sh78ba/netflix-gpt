@@ -1,0 +1,7 @@
+{
+    "tailwindCSS.experimental.configFile": null,
+    "json.schemas": [
+
+    ],
+    "tailwindCSS.includeLanguages": { "plaintext": "javascript" }
+}
