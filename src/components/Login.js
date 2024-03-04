@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
+import { USER_AVATAR } from "../utils/constant";
 import { checkValidData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
@@ -7,12 +8,10 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
 const Login = () => {
-  const navigate = useNavigate();
   const [isSignInForm, setSignInForm] = useState(true);
 
   const dispatch = useDispatch();
@@ -43,7 +42,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/110539009?v=4",
+            photoURL: {USER_AVATAR},
           })
             .then(() => {
               const {uid,email,displayName,photoURL}= auth.currentUser;
@@ -55,7 +54,7 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
+
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -76,8 +75,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
           // ...
         })
         .catch((error) => {

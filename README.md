@@ -15,7 +15,19 @@
 - Auth
 - Signout
 - Update Profile
-
+- Signup Bug Fixed
+- Redirect Bug Fixed
+- Unsubscribed to the onAuth State change cllback
+- Registered and created an app & get access token
+- Get Data from nowplaying 
+- Custom Hook for nowPlaying Movies
+- Update Store
+- Created a movie slice
+- Fetch data for trailer
+- Update store with trailer
+- Embedded the video
+- Make it autoplay & mute
+- 
 # Features
 -Login Or Signup
     -Login/SingUp Form
