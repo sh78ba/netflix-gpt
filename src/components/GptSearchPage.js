@@ -5,13 +5,17 @@ import bgimage from "../bgimage.png"
 
 const GptSearchPage = () => {
   return (
-    <div>
-      <div className='fixed -z-10'>
-       <img src={bgimage} alt='bgimage'></img>
+    <>
+     <div className='fixed -z-10'>
+       <img src={bgimage} alt='bgimage' className='h-screen md:h-full w-full object-cover'></img>
        </div>
+       <div className=''>
+     
       <GptSearchBar/>
       <GptMovieSuggestions/>
       </div>
+       </>
+    
   )
 }
 
