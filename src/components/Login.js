@@ -87,7 +87,7 @@ signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         {errorMessage && (
                     <p className='text-red-500 font-bold text-lg py-2'>{errorMessage}</p>
                 )}
-        <button onClick={handleButtonClick}  className='p-4 my-6 bg-red-700 w-full rounded-lg'>{isSignInForm?"Sign In":"Sign Up" }</button>
+        <button onClick={handleButtonClick}  className='p-4 my-6 bg-red-700 w-full rounded-lg hover:opacity-80'>{isSignInForm?"Sign In":"Sign Up" }</button>
         <p className='p-4 cursor-pointer' onClick={toogleSignInForm}>{isSignInForm ? "New to Netflix? Sign Up Now":"Already Had Account? Sign In"}</p>
        </form>
     </div>

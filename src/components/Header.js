@@ -64,7 +64,7 @@ const Header = () => {
         (<div className='flex items-center p-2 justify-between'>
           {
             showGptSearch&&(
-              <select className='p-2 m-2 bg-gray-900 text-white' onChange={handleLanguageChange}>
+              <select className='p-2 m-2 bg-gray-900 text-white hover:opacity-80 cursor-pointer' onChange={handleLanguageChange}>
             {SUPPORTED_LANGUAGES.map(lang=>
               <option key={lang.identifier} value={lang.identifier}>{lang.name}</option>
             )}
@@ -73,13 +73,13 @@ const Header = () => {
           </select>
             )
           }
-          <button className='py-2 px-4 my-2 mx-4 bg bg-purple-800 text-white rounded-lg' onClick={hadleGptSearchClick}>{ showGptSearch? "Homepage":"GPT Search"}</button>
+          <button className='py-2 px-4 my-2 mx-4 bg bg-purple-800 text-white rounded-lg hover:opacity-80' onClick={hadleGptSearchClick}>{ showGptSearch? "Homepage":"GPT Search"}</button>
         <img 
           className='hidden md:block w-12 h-12' 
           src={user?.photoURL} 
           alt='user_icon' 
         />
-          <button onClick={handleSignOut} className=' text-white font-bold'>Sign Out</button>
+          <button onClick={handleSignOut} className=' text-white font-bold hover:opacity-80'>Sign Out</button>
         </div>)
 
        }
