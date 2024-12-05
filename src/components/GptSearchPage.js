@@ -1,7 +1,7 @@
 import React from 'react'
 import GptSearchBar from './GptSearchBar'
 import GptMovieSuggestions from './GptMovieSuggestions'
-import bgimage from "../bgimage.png"
+import bgimage from "../bgimage.webp"
 
 const GptSearchPage = () => {
   return (

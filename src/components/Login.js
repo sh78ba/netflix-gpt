@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import Header from './Header'
-import bgimage from "../bgimage.png"
+import bgimage from "../bgimage.webp"
 import { checkValidData } from '../utils/Validate';
 
 import {  createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -74,10 +74,16 @@ signInWithEmailAndPassword(auth, email.current.value, password.current.value)
   return (
     <div>
         <Header/>
-       <div className='absolute'>
+       <div className='absolute '>
        <img className='h-screen w-full md:h-full md:w-screen object-cover' src={bgimage} alt='bgimage'></img>
+      
        </div>
+      
+       
+     
+  
        <form onSubmit={(e)=>e.preventDefault()} className='absolute w-full md:w-3/12 p-12 bg-black bg my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80'>
+        
     <h1 className='font-bold text-3xl py-4'>{isSignInForm?"Sign In":"Sign Up"}</h1>
       {!isSignInForm&&( <input ref={name} type='text' placeholder='Full Name' className='my-4 p-4 w-full bg-gray-700 outline-none'/>)
 
@@ -87,9 +93,12 @@ signInWithEmailAndPassword(auth, email.current.value, password.current.value)
         {errorMessage && (
                     <p className='text-red-500 font-bold text-lg py-2'>{errorMessage}</p>
                 )}
-        <button onClick={handleButtonClick}  className='p-4 my-6 bg-red-700 w-full rounded-lg hover:opacity-80'>{isSignInForm?"Sign In":"Sign Up" }</button>
-        <p className='p-4 cursor-pointer' onClick={toogleSignInForm}>{isSignInForm ? "New to Netflix? Sign Up Now":"Already Had Account? Sign In"}</p>
+        <button onClick={handleButtonClick}  className='p-4 my-6 bg-orange-700 w-full rounded-lg hover:opacity-80'>{isSignInForm?"Sign In":"Sign Up" }</button>
+        <p className='p-4 cursor-pointer' onClick={toogleSignInForm}>{isSignInForm ? "New to MoviesGtp? Sign Up Now":"Already Had Account? Sign In"}</p>
        </form>
+       <div className='relative -bottom-20 text-center'>
+       <h1 className='text-2xl bg-red-500  text-center z-50 inline-block'>This site developed for project purpose only and is not for active use!!!</h1>
+       </div>
     </div>
   )
 }
